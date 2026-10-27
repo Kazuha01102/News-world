@@ -1,0 +1,75 @@
+# Unity caches, machine state and local builds
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Bb]uild/
+/[Bb]uilds/
+/[Ll]ogs/
+/[Uu]ser[Ss]ettings/
+/[Mm]emoryCaptures/
+/[Rr]ecordings/
+/Backups/
+/ClientSimStorage/
+/Tools/
+/.vs/
+/.vscode/
+/.idea/
+*.csproj
+*.sln
+*.suo
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+*.tmp
+*.log
+*.log.*
+*.unitypackage
+*.vrcw
+*.vrca
+*.apk
+*.aab
+*.exe
+*.zip
+.DS_Store
+Thumbs.db
+
+# VPM packages are restored from official repositories, not redistributed.
+# Keep manifest.json, packages-lock.json, vpm-manifest.json and .gitignore.
+/Packages/*/
+
+# Udon compiler outputs and SDK-generated helper copies (including their meta).
+/Assets/SerializedUdonPrograms/
+/Assets/SerializedUdonPrograms.meta
+/Assets/UdonSharp/
+/Assets/UdonSharp.meta
+
+# Local observations: logs/device details and client captures containing news.
+/Documentation/Captures/
+/Documentation/AudioOutputObservation.json
+/Documentation/SDK_UI_Exception.txt
+/Documentation/unity-validation.txt
+
+# Credentials, local configuration, certificates and signing keys
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+*.keystore
+auth.json
+credentials.json
+secrets.json
+.npmrc
+.netrc
+.git-credentials
+/.codex/
+/.agents/
