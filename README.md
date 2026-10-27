@@ -1,5 +1,7 @@
 # NightHome / News-world
 
+最新の更新：ソファと寝具の丸すぎる輪郭を修正しました。[変更前後の画像・保存データ・確認結果](Documentation/Upholstery/README.md)を参照してください。平らな座面、芯を感じる肘掛け、薄い縫製縁の枕、マットレスに沿って垂れる掛け布団へ変更。配置・Collider・Udon参照を保持し、C#／UdonコンパイルとSDK事前検証を通過しています。この更新後のBuild & Testと実機確認は未実施です。
+
 ホーム全体の家具・内装を一通り仕上げました。最新の部屋画像・変更内容・未確認項目は [WholeFinishの記録](Documentation/WholeFinish/README.md)、あとで部屋を巡って試す手順は [実機確認チェックリスト](Documentation/WholeFinish/WALKTHROUGH.md) にまとめています。C#／Udonコンパイル、SDK検証、ローカルBuild & Testは成功。実機の外観・音声・VR・複数人同期・16人負荷は未確認です。ニュースURL自動取得とSDK例外の調査は保留しています。
 
 最新の見た目改善：[観葉植物・壁・建具・陰影の比較と確認結果](Documentation/PlantsWalls/README.md)。Blender製の広葉植物、実寸UVの壁紙、巾木・窓枠・ドア枠を追加しました。ホームは既存7灯に影付きSpot 1灯を加えた状態です。別シーンの小規模ベイクは成功しましたが、ホーム全体のベイクは未完了です。今回のローカルBuild & Test成功、実機の外観・移動・VR・複数人負荷は未確認です。

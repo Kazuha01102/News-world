@@ -1,0 +1,11 @@
+Original Transform/Collider/Udon state identical=True
+Records=1199 Udon=114
+Scene=Assets/NightHome/NightHome_Blockout.unity
+Side sofa - 3.00m | 12868 tris | Center: (0.00, 0.44, 0.00), Extents: (1.50, 0.44, 0.52) | 3 materials
+Window sofa - 3.00m | 12868 tris | Center: (0.00, 0.44, 0.00), Extents: (1.50, 0.44, 0.52) | 3 materials
+Main sofa - 3.20m | 12868 tris | Center: (0.00, 0.44, 0.00), Extents: (1.60, 0.44, 0.52) | 3 materials
+QuietSofa240 | 10520 tris | Center: (0.00, 0.44, 0.00), Extents: (1.20, 0.44, 0.52) | 4 materials
+FloorCushion | 1136 tris | Center: (0.00, 0.09, 0.00), Extents: (0.34, 0.09, 0.32) | 1 materials
+BedroomBed | 9302 tris | Center: (0.00, 0.63, 0.04), Extents: (1.02, 0.63, 1.17) | 4 materials
+QuietSofa300 | 12868 tris | Center: (0.00, 0.44, 0.00), Extents: (1.50, 0.44, 0.52) | 4 materials
+Missing active meshes=0

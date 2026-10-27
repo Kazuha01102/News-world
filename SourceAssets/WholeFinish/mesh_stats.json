@@ -1,6 +1,6 @@
 {
   "BedroomBed": {
-    "triangles": 5472,
+    "triangles": 9302,
     "materials": 4,
     "dimensions_blender_m": [
       2.0399999618530273,
@@ -45,21 +45,21 @@
     ]
   },
   "QuietSofa300": {
-    "triangles": 11396,
+    "triangles": 12868,
     "materials": 4,
     "dimensions_blender_m": [
       3.0,
       1.0399999618530273,
-      0.8829530477523804
+      0.880144476890564
     ]
   },
   "QuietSofa240": {
-    "triangles": 8708,
+    "triangles": 10520,
     "materials": 4,
     "dimensions_blender_m": [
       2.4000000953674316,
       1.0399999618530273,
-      0.8829530477523804
+      0.880144476890564
     ]
   },
   "QuietTable150": {
@@ -81,12 +81,12 @@
     ]
   },
   "FloorCushion": {
-    "triangles": 768,
+    "triangles": 1136,
     "materials": 1,
     "dimensions_blender_m": [
       0.6800000071525574,
       0.6399999856948853,
-      0.17137613892555237
+      0.18000000715255737
     ]
   },
   "EntryStorage": {

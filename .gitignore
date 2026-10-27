@@ -76,3 +76,7 @@ secrets.json
 
 # Blender rolling local backups; editable .blend is tracked
 *.blend[0-9]
+
+# Python generator caches
+__pycache__/
+*.py[cod]

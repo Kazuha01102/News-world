@@ -128,7 +128,7 @@ public static class LivingFinishBuilder
     static void LoadPalette(){palette=new Material[7];string[] names={"GrayFabric","SeamGray","Walnut","Metal","RugWeave","RugEdge","FrostedShade"};for(int i=0;i<7;i++)palette[i]=AssetDatabase.LoadAssetAtPath<Material>(Root+"/Materials/"+names[i]+".mat");}
     static void MakeMaterials()
     {
-        palette=new[]{Mat("GrayFabric",new Color(.54f,.55f,.54f),.08f,0),Mat("SeamGray",new Color(.47f,.48f,.47f),.06f,0),Mat("Walnut",new Color(.51f,.35f,.21f),.3f,0),Mat("Metal",new Color(.11f,.115f,.11f),.58f,.8f),Mat("RugWeave",new Color(.72f,.68f,.59f),.04f,0),Mat("RugEdge",new Color(.48f,.45f,.39f),.05f,0),Mat("FrostedShade",new Color(.93f,.85f,.7f),.12f,0)};
+        palette=new[]{Mat("GrayFabric",new Color(.54f,.55f,.54f),.04f,0),Mat("SeamGray",new Color(.47f,.48f,.47f),.04f,0),Mat("Walnut",new Color(.51f,.35f,.21f),.3f,0),Mat("Metal",new Color(.11f,.115f,.11f),.58f,.8f),Mat("RugWeave",new Color(.72f,.68f,.59f),.04f,0),Mat("RugEdge",new Color(.48f,.45f,.39f),.05f,0),Mat("FrostedShade",new Color(.93f,.85f,.7f),.12f,0)};
         Texture2D fabric=new Texture2D(512,512),normal=new Texture2D(512,512),wood=new Texture2D(512,512);
         for(int y=0;y<512;y++)for(int x=0;x<512;x++)
         {
@@ -138,7 +138,7 @@ public static class LivingFinishBuilder
             float w=.86f+.018f*Mathf.Sin(y*.64f+Mathf.Sin(x*.012f)*1.1f)+.012f*Mathf.Sin(y*1.9f)+.025f*Mathf.PerlinNoise(x*.012f,y*.32f);wood.SetPixel(x,y,new Color(w,w*.98f,w*.93f,1));
         }
         Texture2D f=WriteTexture(fabric,"WovenFabric",false),n=WriteTexture(normal,"WovenNormal",true),wtex=WriteTexture(wood,"OakGrain",false);
-        foreach(int i in new[]{0,4,5}){palette[i].mainTexture=f;palette[i].mainTextureScale=new Vector2(4,4);palette[i].SetTexture("_BumpMap",n);palette[i].SetTextureScale("_BumpMap",new Vector2(4,4));palette[i].SetFloat("_BumpScale",.24f);palette[i].EnableKeyword("_NORMALMAP");}
+        foreach(int i in new[]{0,4,5}){palette[i].mainTexture=f;palette[i].mainTextureScale=new Vector2(4,4);palette[i].SetTexture("_BumpMap",n);palette[i].SetTextureScale("_BumpMap",new Vector2(4,4));palette[i].SetFloat("_BumpScale",i==0?.10f:.24f);palette[i].EnableKeyword("_NORMALMAP");}
         palette[2].mainTexture=wtex;palette[2].mainTextureScale=new Vector2(1,1);
         palette[6].EnableKeyword("_EMISSION");palette[6].SetColor("_EmissionColor",new Color(1,.84f,.62f)*1.1f);palette[6].globalIlluminationFlags=MaterialGlobalIlluminationFlags.BakedEmissive;
         foreach(var m in palette)EditorUtility.SetDirty(m);AssetDatabase.SaveAssets();

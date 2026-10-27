@@ -26,7 +26,7 @@ public static class WholeHomeFinishBuilder
         {
             string path=Root+"/Materials/"+names[i]+".mat";var m=AssetDatabase.LoadAssetAtPath<Material>(path);
             if(!m){m=i==0?new Material(Resolve("GrayFabric")):new Material(Shader.Find("Standard"));m.name=names[i];AssetDatabase.CreateAsset(m,path);}
-            m.color=colors[i];m.SetFloat("_Glossiness",i==4?.35f:.06f);EditorUtility.SetDirty(m);
+            m.color=colors[i];if(i==0)m.SetFloat("_BumpScale",.08f);m.SetFloat("_Glossiness",i==4?.35f:(i==0?.03f:.06f));EditorUtility.SetDirty(m);
         }
         foreach(var guid in AssetDatabase.FindAssets("t:Model",new[]{Root+"/Models"}))
         {var importer=(ModelImporter)AssetImporter.GetAtPath(AssetDatabase.GUIDToAssetPath(guid));importer.generateSecondaryUV=true;importer.importCameras=false;importer.importLights=false;importer.importAnimation=false;importer.importNormals=ModelImporterNormals.Import;importer.SaveAndReimport();}

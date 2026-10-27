@@ -39,7 +39,8 @@ def export(name):
     obj=bpy.context.object;obj.name=name;bpy.ops.object.transform_apply(location=True,rotation=True,scale=True)
     obj.scale.x=-1;bpy.ops.object.transform_apply(location=False,rotation=False,scale=True)
     bm=bmesh.new();bm.from_mesh(obj.data);bmesh.ops.recalc_face_normals(bm,faces=list(bm.faces));bm.to_mesh(obj.data);bm.free()
-    bpy.ops.export_scene.fbx(filepath=str(OUT/(name+'.fbx')),use_selection=True,object_types={'MESH'},apply_scale_options='FBX_SCALE_ALL',bake_space_transform=True,axis_forward='-Z',axis_up='Y',add_leaf_bones=False,bake_anim=False)
+    if not globals().get('MODEL_FILTER') or name in MODEL_FILTER:
+        bpy.ops.export_scene.fbx(filepath=str(OUT/(name+'.fbx')),use_selection=True,object_types={'MESH'},apply_scale_options='FBX_SCALE_ALL',bake_space_transform=True,axis_forward='-Z',axis_up='Y',add_leaf_bones=False,bake_anim=False)
     obj.data.calc_loop_triangles();stats[name]={'triangles':len(obj.data.loop_triangles),'materials':len(obj.data.materials),'dimensions_blender_m':list(obj.dimensions)}
     out=bpy.data.collections.new('Export_'+name);bpy.context.scene.collection.children.link(out)
     for old in list(obj.users_collection):old.objects.unlink(obj)
@@ -77,25 +78,46 @@ box('Rounded headboard',(0,-1.15,.68),(2.04,.10,1.16),.035,'Walnut',4)
 box('Headboard upholstered inset',(0,-1.086,.84),(1.85,.045,.55),.018,'GrayFabric')
 mat_on(cushion('Rounded mattress',(0,0,.54),(1.80,2.10,.24),sag=.005),'BedLinen')
 for x in (-.44,.44):mat_on(cushion('Soft pillow',(x,-.72,.748),(.75,.46,.18),(math.radians(5),0,x*.03),sag=.008),'BedLinen')
-vs=[];fs=[];nx=19;ny=19
+# Quilt follows a planar mattress; only gravity overhangs, the turnback and two
+# foot-corner tension lines add large folds. There is no all-over random noise.
+vs=[];fs=[];nx=33;ny=29
 for surface in (0,1):
  for i in range(nx):
-  u=i/(nx-1)*2-1
+  u=i/(nx-1)*2-1;x=.945*u
   for j in range(ny):
-   v=j/(ny-1)*2-1;x=.945*u;y=.25+.775*v
-   loft=.035*(1-u*u)*(1-v*v)
-   remaining=max(0,1-(abs(x)/.90)**4.4-(abs(y)/1.05)**4.4)
-   mattress_surface=.54+.12*remaining**(1/4.4)
-   fold=.015*math.exp(-((v+.77)/.18)**2)*(.7+.3*math.cos(u*5))
-   z=mattress_surface+(.045+loft+fold if surface else .006)+.003*math.sin(v*7+u*2)*(1-u*u)
-   vs.append((x,y,z))
+   v=j/(ny-1)*2-1;y=.30+.81*v
+   tx=max(0,(abs(x)-.90)/.045);ty=max(0,(y-1.05)/.06)
+   px=x if tx==0 else math.copysign(.90+.018*math.sin(min(1,tx)*math.pi/2),x)
+   py=y if ty==0 else 1.05+.018*math.sin(min(1,ty)*math.pi/2)
+   drop=.12*max(1-math.cos(min(1,tx)*math.pi/2),1-math.cos(min(1,ty)*math.pi/2))
+   loft=.006*(1-u**8)*(1-v**8)
+   pull=max(0,min(1,(abs(x)-.56)/.30))*max(0,min(1,(y-.55)/.40))
+   crease=-.009*math.exp(-((y-(.84+.12*(abs(x)/.90)))/.045)**2)*pull
+   z=.66+(.018+loft if surface else .004+loft*.25)-drop+crease
+   vs.append((px,py,z))
 count=nx*ny
 for k in range(2):
  for i in range(nx-1):
   for j in range(ny-1):a=k*count+i*ny+j;fs.append((a,a+ny,a+ny+1,a+1) if k else (a+1,a+ny+1,a+ny,a))
 edge=list(range(ny))+[i*ny+ny-1 for i in range(1,nx)]+list(range(count-2,count-ny-1,-1))+[i*ny for i in range(nx-2,0,-1)]
 for a,b in zip(edge,edge[1:]+edge[:1]):fs.append((a,b,b+count,a+count))
-mesh('Lofted draped duvet',vs,fs,'GrayFabric');export('BedroomBed')
+mesh('Gravity-draped quilt',vs,fs,'GrayFabric')
+# Exposed reverse of the folded head edge: two layers, with a soft rolled turn.
+fv=[];ff=[];columns=25;rows=7
+for side in (0,1):
+ for i in range(columns):
+  x=-.89+1.78*i/(columns-1)
+  for j in range(rows):
+   t=j/(rows-1);y=-.50+.17*t
+   z=.690+(.010 if side else .002)+.007*math.sin(math.pi*t)-.003*(x/.89)**2
+   fv.append((x,y,z))
+count=columns*rows
+for k in range(2):
+ for i in range(columns-1):
+  for j in range(rows-1):a=k*count+i*rows+j;ff.append((a,a+rows,a+rows+1,a+1) if k else (a+1,a+rows+1,a+rows,a))
+edge=list(range(rows))+[i*rows+rows-1 for i in range(1,columns)]+list(range(count-2,count-rows-1,-1))+[i*rows for i in range(columns-2,0,-1)]
+for a,b in zip(edge,edge[1:]+edge[:1]):ff.append((a,b,b+count,a+count))
+mesh('Folded quilt reverse',fv,ff,'BedLinen');export('BedroomBed')
 
 for x in (-.23,.23):
     for y in (-.19,.19):box('Nightstand tapered leg',(x,y,.255),(.045,.045,.51),.006,'Walnut')
@@ -137,7 +159,9 @@ def quiet_sofa(name,width,seats):
     box('Upholstered base',(0,0,.22),(width-.08,.94,.17),.035,'GrayFabric')
     for x in (-width/2+.20,width/2-.20):
         for y in (-.34,.34):box('Recessed foot',(x,y,.08),(.085,.085,.16),.012,'Walnut')
-    for x in (-width/2+.075,width/2-.075):box('Soft arm',(x,0,.45),(.15,1.04,.43),.065,'GrayFabric',5)
+    for x in (-width/2+.075,width/2-.075):
+        box('Upholstered arm frame',(x,0,.43),(.146,.998,.39),.012,'GrayFabric',3)
+        cushion('Arm cap',(x,0,.63),(.15,1.04,.07),kind='arm')
     w=(width-.35)/seats
     for i in range(seats):
         x=(i-(seats-1)/2)*w

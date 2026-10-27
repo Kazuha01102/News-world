@@ -40,21 +40,19 @@ def uv_metres(obj, dimensions):
             v=mesh.vertices[mesh.loops[loop].vertex_index].co
             layer.data[loop].uv=(v[u_axis],v[v_axis])
 
-def cushion(name,position,dimensions,tilt=(0,0,0),sag=0):
-    bpy.ops.mesh.primitive_cube_add(size=2,location=position)
-    obj=bpy.context.object;obj.name=name
-    bm=bmesh.new();bm.from_mesh(obj.data)
-    bmesh.ops.subdivide_edges(bm,edges=list(bm.edges),cuts=7,use_grid_fill=True)
-    bm.to_mesh(obj.data);bm.free()
-    for vertex in obj.data.vertices:
-        v=vertex.co.copy();v/=sum(abs(c)**4.4 for c in v)**(1/4.4)
-        z=v.z*dimensions[2]/2
-        if v.z>0:z-=sag*max(0,1-v.x*v.x)*max(0,1-v.y*v.y)*v.z
-        vertex.co=(v.x*dimensions[0]/2,v.y*dimensions[1]/2,z)
-    obj.data.update();uv_metres(obj,dimensions)
-    for face in obj.data.polygons:face.use_smooth=True
-    obj.rotation_euler=tilt;obj.data.materials.append(materials[0]);parts.append(obj)
-    return obj
+# Shared structural panels and sewn cases, replacing the universal superellipsoid.
+import sys,importlib
+sys.path.insert(0,str(HERE.parent/'Upholstery'))
+import cloth_shapes
+importlib.reload(cloth_shapes)
+
+def cushion(name,position,dimensions,tilt=(0,0,0),sag=0,kind=None):
+    text=name.lower()
+    if kind is None:
+        kind='mattress' if 'mattress' in text else ('throw' if 'loose' in text else ('pillow' if 'pillow' in text else ('floor' if 'floor' in text else ('back' if 'back' in text else ('arm' if 'arm cap' in text else 'seat')))))
+    obj=cloth_shapes.create(name,position,dimensions,tilt,kind)
+    uv_metres(obj,dimensions);obj.data.materials.append(materials[0]);parts.append(obj);return obj
+
 def box(name, position, dimensions, radius, material, segments=3, tilt=(0,0,0)):
     bpy.ops.mesh.primitive_cube_add(size=1,location=position)
     obj=bpy.context.object;obj.name=name;obj.dimensions=dimensions
@@ -67,21 +65,10 @@ def box(name, position, dimensions, radius, material, segments=3, tilt=(0,0,0)):
     obj.rotation_euler=tilt;obj.data.materials.append(materials[MATERIALS.index(material)])
     parts.append(obj);return obj
 
-def seam(name, width, depth, height, cx, cy, material='SeamGray'):
-    points=[]
-    for i in range(96):
-        angle=2*math.pi*i/96;c=math.cos(angle);s=math.sin(angle)
-        x=math.copysign(abs(c)**(2/4.4),c)*(width/2+.0008)
-        y=math.copysign(abs(s)**(2/4.4),s)*(depth/2+.0008)
-        points.append((cx+x,cy+y,height))
-    curve=bpy.data.curves.new(name,'CURVE');curve.dimensions='3D';curve.bevel_depth=.0016;curve.bevel_resolution=1
-    spline=curve.splines.new('POLY');spline.points.add(len(points)-1)
-    for p,co in zip(spline.points,points):p.co=(*co,1)
-    spline.use_cyclic_u=True
-    obj=bpy.data.objects.new(name,curve);bpy.context.collection.objects.link(obj)
-    obj.data.materials.append(materials[MATERIALS.index(material)])
-    bpy.ops.object.select_all(action='DESELECT');obj.select_set(True);bpy.context.view_layer.objects.active=obj
-    bpy.ops.object.convert(target='MESH');parts.append(obj)
+def seam(name,width,depth,height,cx,cy,material='SeamGray'):
+    obj=cloth_shapes.welt(name,width,depth,height,cx,cy)
+    obj.data.materials.append(materials[MATERIALS.index(material)]);parts.append(obj)
+
 
 def export(name):
     global parts
@@ -99,7 +86,8 @@ def export(name):
     bpy.context.view_layer.objects.active=copies[0]
     bpy.ops.object.join();obj=bpy.context.object;obj.name=name
     bpy.ops.object.transform_apply(location=True,rotation=True,scale=True)
-    bpy.ops.export_scene.fbx(filepath=str(OUT/(name+'.fbx')),use_selection=True,object_types={'MESH'},global_scale=1,apply_unit_scale=True,apply_scale_options='FBX_SCALE_ALL',bake_space_transform=True,axis_forward='-Z',axis_up='Y',use_mesh_modifiers=True,mesh_smooth_type='FACE',add_leaf_bones=False,bake_anim=False)
+    if not globals().get('MODEL_FILTER') or name in MODEL_FILTER:
+        bpy.ops.export_scene.fbx(filepath=str(OUT/(name+'.fbx')),use_selection=True,object_types={'MESH'},global_scale=1,apply_unit_scale=True,apply_scale_options='FBX_SCALE_ALL',bake_space_transform=True,axis_forward='-Z',axis_up='Y',use_mesh_modifiers=True,mesh_smooth_type='FACE',add_leaf_bones=False,bake_anim=False)
     mesh=obj.data;mesh.calc_loop_triangles()
     stats[name]={'triangles':len(mesh.loop_triangles),'materials':len(mesh.materials),'dimensions_m':list(obj.dimensions)}
     col=bpy.data.collections.new('Export_'+name);bpy.context.scene.collection.children.link(col)
@@ -113,7 +101,9 @@ def sofa(name,width):
     box('Upholstered plinth',(0,0,.22),(width-.08,.94,.17),.035,'GrayFabric')
     for x in (-width/2+.20,width/2-.20):
         for y in (-.34,.34):box('Recessed oak foot',(x,y,.08),(.085,.085,.16),.012,'Walnut')
-    for x in (-width/2+.075,width/2-.075):box('Soft arm',(x,0,.45),(.15,1.04,.43),.065,'GrayFabric',5)
+    for x in (-width/2+.075,width/2-.075):
+        box('Upholstered arm frame',(x,0,.43),(.146,.998,.39),.012,'GrayFabric',3)
+        cushion('Arm cap',(x,0,.63),(.15,1.04,.07),kind='arm')
     seat_width=(width-.35)/3
     for i in range(3):
         x=(i-1)*seat_width
