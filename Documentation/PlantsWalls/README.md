@@ -88,6 +88,7 @@ Blender MCP（5.2.3 LTS）とUnity MCP（NightHome、2022.3.22f1）の接続先�
 - 既存Collider 189個がシリアライズ設定・位置・回転・拡大率・有効状態まで一致。新しい外壁閉塞Colliderが1個で、合計190個。
 - ニューステレビ、QvPen、入退室ログと音、個室音声境界、ローカルミラー、既存家具の参照を保持。旧壁・旧植物のRendererは無効化し、重複表示を防いでいます。
 - SDK Builder：ホームで `NoGuiErrorsOrIssues() = true`。今回のホームでローカル `BuildAndTest()` 正常終了。ローカル書き出しとクライアント起動要求まで確認しました。VRChatへのアップロードなし。
+- ローカル試験後にSDKが所有していない既存Blueprint IDを解除しました。最終保存の差分はこのIDの空欄化だけで、シーンへ保存しています。終盤にUnity MCPのWebSocket通信が切れたため、対象のUnityウィンドウを確認して通常のCtrl+Sで保存し、未保存マークが消えたこととGit差分を確認しました。
 - ベイク試験シーンにはScene Descriptorを置いていないため、開いていたSDKパネルの `CreateValidationsGUI` でIndexOutOfRangeExceptionが出ました。ホームのBuild後は検証が通っています。今後の試験開始処理はSDKパネルを閉じてから試験シーンを開くようにしています。
 - 既存のSDK `CreateContentInfoGUI` のNullReferenceExceptionはBuild中に再発。SDKのソースは変更しておらず、恒久対処は未完了です。
 - 新しいホームのクライアント内での外観・移動・映像・音声、VR操作、QvPen描画、複数人同期、途中参加、所有権移譲、16人負荷は未確認です。以前のニュース映像確認の記録と今回の見た目確認を混同していません。
@@ -100,5 +101,6 @@ Blender MCP（5.2.3 LTS）とUnity MCP（NightHome、2022.3.22f1）の接続先�
 3. 植物周辺、窓際、入口・寝室・個室の枠を歩き、引っかかりや見えない壁、頭の接触を確認します。葉にColliderはありません。
 4. ソファから実際のニュース字幕と操作ボタンを確認します。HMDでも明るさ・葉の裏・影のちらつきを確認してください。音声、QvPen、ミラー、個室音声分離は以前の検証手順も使用します。
 5. 実機で影の負荷が高ければ、Hierarchyの `HOME - Plant and wall finish > Living contact shadow - one spot` を選び、InspectorのLightのチェックを外すと影追加前へ戻せます。全ライトの影を有効にする必要はありません。
+6. Unity MCPの再接続が必要な場合は、Unity上部 `Window > MCP for Unity > Toggle MCP Window` の接続欄でHTTPの **Connect** を使います。ボタンがDisconnectなら一度切断してConnectを押します。終了時点ではサーバーの接続一覧にNightHomeが残っている一方、Editorへのpingは応答しない状態でした。接続回復後の再検査は未実施です。
 
 外部モデル・写真・有料素材・画像生成サービスは使っていません。新規メッシュ・模様・Shader・スクリプトは自作です。既存の第三者アセットの条件は `THIRD_PARTY_NOTICES.md` を参照してください。
