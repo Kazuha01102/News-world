@@ -1,5 +1,7 @@
 # NightHome 現在の作業状況
 
+最新作業は [WholeFinish/README.md](WholeFinish/README.md)。寝室・個室・入口・廊下・本棚・小物・QvPen返却台・ミラースイッチを仕上げ、C#／Udonコンパイル・SDK検証・ローカルBuild & Testを確認しました。実機確認は後にまとめて行うため、[巡回チェックリスト](WholeFinish/WALKTHROUGH.md) を参照してください。灯数は8・影付き1を維持し、全体ベイクはしていません。以下は過去の制作記録です。
+
 最新作業は [PlantsWalls/README.md](PlantsWalls/README.md) を参照してください。観葉植物と壁・建具をBlender製FBXへ置換し、影付きSpotを1灯だけ追加しました。小規模な別シーンのベイクとホームのBuild & Testは成功。ホーム全体のベイク、実機の移動・外観・負荷の確認は未完了です。以下の過去記録より、この最新記録を優先してください。
 
 リビング家具の最新変更は [LivingFinish/README.md](LivingFinish/README.md) を参照してください。Blender制作FBXへ置換しBuild & Test成功。照明ベイクはメモリ不足で未完了、影なしRealtimeへ復帰。以下は主に初期実装時の記録です。

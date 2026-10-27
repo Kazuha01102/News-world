@@ -1,0 +1,10 @@
+Project=C:/Users/user/AppData/Local/VRChatCreatorCompanion/VRChatProjects/NightHome/Assets
+Scene=Assets/NightHome/NightHome_Blockout.unity
+CSharpCompilationFailed=False
+UdonSharpCompileSync=completed
+SDKValidationNoErrors=True
+BuildAndTest=success
+SceneDirty=False
+VRChatUpload=not performed
+ActualClientVisualAudioVRMultiplayerPerformance=not verified
+NewsAutomaticFetchAndSDKExceptionInvestigation=deferred

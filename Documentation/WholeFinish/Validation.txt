@@ -1,0 +1,37 @@
+Udon=114; reference fingerprint identical=True
+Missing scripts=0
+Capacity=16; spawn=(-1.00, 0.08, -6.10) yaw=342
+Room audio boundary=(7.00, 1.60, -3.00) size=(6.00, 3.80, 6.00) trigger=True
+Old furniture colliders disabled by archive=27
+Mug: 956 tris, 2 material slots, Center: (-3.38, 0.54, 4.21), Extents: (0.08, 0.05, 0.07)
+EntryDoor: 884 tris, 2 material slots, Center: (-1.00, 1.20, -7.85), Extents: (0.65, 1.20, 0.07)
+QuietSofa240: 8708 tris, 4 material slots, Center: (9.00, 0.47, -2.20), Extents: (0.52, 0.44, 1.20)
+PenReturnDesk: 1428 tris, 2 material slots, Center: (-7.00, 0.44, -1.80), Extents: (1.10, 0.44, 0.30)
+FloorCushion: 768 tris, 1 material slots, Center: (7.70, 0.11, -1.10), Extents: (0.41, 0.09, 0.40)
+CeilingDisc: 400 tris, 2 material slots, Center: (-4.00, 3.36, -3.00), Extents: (0.24, 0.04, 0.24)
+DrawingRug: 732 tris, 2 material slots, Center: (-7.00, 0.02, -3.80), Extents: (1.70, 0.01, 1.50)
+QuietOccupancyPanel: 344 tris, 2 material slots, Center: (3.90, 1.90, -1.20), Extents: (0.03, 0.43, 0.95)
+BedroomBed: 5472 tris, 4 material slots, Center: (6.00, 0.66, 5.54), Extents: (1.02, 0.63, 1.17)
+LogFrame: 752 tris, 1 material slots, Center: (-3.40, 1.80, -7.79), Extents: (1.63, 1.25, 0.03)
+BedroomRug: 732 tris, 2 material slots, Center: (6.00, 0.02, 4.80), Extents: (2.40, 0.01, 2.10)
+CeilingDisc: 400 tris, 2 material slots, Center: (7.00, 3.36, -3.00), Extents: (0.24, 0.04, 0.24)
+QuietRug: 732 tris, 2 material slots, Center: (7.00, 0.02, -3.00), Extents: (2.30, 0.01, 2.25)
+CeilingDisc: 400 tris, 2 material slots, Center: (-1.00, 3.36, -6.00), Extents: (0.24, 0.04, 0.24)
+BedsideLamp: 748 tris, 2 material slots, Center: (7.55, 0.85, 6.10), Extents: (0.15, 0.23, 0.15)
+Mug: 956 tris, 2 material slots, Center: (-4.48, 0.54, 4.00), Extents: (0.07, 0.05, 0.06)
+CeilingDisc: 400 tris, 2 material slots, Center: (3.00, 3.36, -1.00), Extents: (0.24, 0.04, 0.24)
+CeilingDisc: 400 tris, 2 material slots, Center: (6.00, 3.36, 5.00), Extents: (0.24, 0.04, 0.24)
+EntryMat: 732 tris, 2 material slots, Center: (-1.00, 0.02, -6.90), Extents: (0.95, 0.01, 0.55)
+BedroomCurtains: 4604 tris, 2 material slots, Center: (5.50, 1.57, 7.69), Extents: (2.65, 1.54, 0.22)
+BedsideTable: 1616 tris, 2 material slots, Center: (7.55, 0.33, 6.11), Extents: (0.31, 0.30, 0.27)
+EntryStorage: 2820 tris, 2 material slots, Center: (-8.70, 0.44, -7.44), Extents: (0.87, 0.44, 0.23)
+MirrorBezel: 716 tris, 3 material slots, Center: (-9.81, 1.10, 1.10), Extents: (0.07, 0.18, 0.18)
+DrawingFrame: 752 tris, 1 material slots, Center: (-9.72, 1.60, -3.70), Extents: (0.04, 1.00, 1.55)
+Bookcase: 9544 tris, 5 material slots, Center: (-9.55, 0.94, 3.20), Extents: (0.19, 0.94, 0.90)
+QuietTable150: 1180 tris, 1 material slots, Center: (7.00, 0.27, -3.00), Extents: (0.75, 0.24, 0.45)
+QuietSofa300: 11396 tris, 4 material slots, Center: (7.00, 0.47, -5.00), Extents: (1.50, 0.44, 0.52)
+New FBX renderer instances=27; tris=58572; material slots=60; new box colliders=23
+Sampled routes: radius .22m, height range .08..1.72m; blocked samples=0
+Existing mirror Use collider reachable=True
+Active realtime lights=8; shadow lights=1; baked GI=False
+Mirror initial active=False
