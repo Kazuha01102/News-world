@@ -73,3 +73,6 @@ secrets.json
 .git-credentials
 /.codex/
 /.agents/
+
+# Blender rolling local backups; editable .blend is tracked
+*.blend[0-9]

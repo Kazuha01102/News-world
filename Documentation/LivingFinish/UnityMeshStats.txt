@@ -1,0 +1,8 @@
+Main sofa - 3.20m tris=11396 slots=3 collider=4 UV0=9502 UV2=9502
+Window sofa - 3.00m tris=11396 slots=3 collider=4 UV0=9457 UV2=9457
+Side sofa - 3.00m tris=11396 slots=3 collider=4 UV0=9457 UV2=9457
+Coffee table - 2.10m tris=2308 slots=1 collider=5 UV0=2288 UV2=2288
+Living rug - bound edge tris=732 slots=2 collider=0 UV0=760 UV2=760
+TV console - 4.10m tris=3120 slots=2 collider=1 UV0=3101 UV2=3101
+Living pendant - linen shade tris=992 slots=3 collider=0 UV0=942 UV2=942
+Total: tris=41340 slots=17 renderers=7 boxColliders=18

@@ -1,5 +1,7 @@
 # NightHome 現在の作業状況
 
+リビング家具の最新変更は [LivingFinish/README.md](LivingFinish/README.md) を参照してください。Blender制作FBXへ置換しBuild & Test成功。照明ベイクはメモリ不足で未完了、影なしRealtimeへ復帰。以下は主に初期実装時の記録です。
+
 2026-10-27 JST。ホーム仮組みと各機能の初期実装。完成内装・複数人での動作保証ではありません。
 
 ## 正式な作業先

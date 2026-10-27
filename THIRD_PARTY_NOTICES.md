@@ -28,3 +28,8 @@ Copyright 2022 The Zen Kaku Gothic Project Authors。
 ## ニュース映像
 
 ニュース映像・音声・期限付き配信URL・映像入りの実機スクリーンショットはリポジトリへ同梱しません。テレビは公開された公式配信URLを参照し、各クライアントが配信元から再生する構成です。配信元やプラットフォームの条件を別途確認してください。
+
+
+## 今回のリビング仕上げ素材
+
+`SourceAssets/LivingFurniture` のblend・Python、`Assets/NightHome/LivingFinish` のFBX・布/木目PNG・マテリアル・Prefabは本制作で自作しました。外部モデル・画像の購入やダウンロード、生成サービスの課金はありません。Blender/Unityの標準機能を使用。既存QvPenやSDKなど第三者パッケージの利用条件は上記から変更していません。
