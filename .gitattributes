@@ -1,0 +1,19 @@
+* text=auto
+*.cs text eol=lf
+*.md text eol=lf
+*.json text eol=lf
+*.meta text eol=lf
+*.unity text eol=lf
+*.svg text eol=lf
+*.mat text eol=lf
+*.shader text eol=lf
+*.png binary
+*.jpg binary
+*.ttf binary
+*.wav binary
+# Unity YAML intentionally writes empty scalar values with a trailing space.
+*.unity whitespace=-blank-at-eol
+*.asset whitespace=-blank-at-eol
+*.mat whitespace=-blank-at-eol
+*.meta whitespace=-blank-at-eol
+Assets/NightHome/Fonts/OFL.txt whitespace=-blank-at-eol

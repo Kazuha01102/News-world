@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="880" viewBox="0 0 1000 880">
+<rect width="1000" height="880" fill="#151f25"/><g font-family="sans-serif" fill="#f5ead7"><text x="60" y="50" font-size="30">NightHome / 仮組み平面図</text><text x="60" y="80" font-size="17">20 × 16m ・ PC向け16人想定 ・ 上が窓側 / 北</text></g>
+<rect x="60" y="100" width="800" height="640" fill="#76634d" stroke="#dfcbb0" stroke-width="8"/>
+<rect x="540" y="100" width="320" height="240" fill="#5c6660" stroke="#dfcbb0" stroke-width="6"/>
+<rect x="620" y="420" width="240" height="240" fill="#465e65" stroke="#dfcbb0" stroke-width="6"/>
+<path d="M540 340V460 M540 540V740" stroke="#dfcbb0" stroke-width="6"/>
+<path d="M557 340H613 M620 508V572" stroke="#76634d" stroke-width="9"/>
+<rect x="215" y="107" width="152" height="18" fill="#1c2732" stroke="#f0c36f" stroke-width="3"/>
+<g fill="#334d40" stroke="#c9b497" stroke-width="2"><rect x="225" y="360" width="150" height="44"/><rect x="116" y="205" width="46" height="132"/><rect x="437" y="205" width="46" height="132"/></g>
+<rect x="256" y="243" width="92" height="48" rx="5" fill="#352a22"/>
+<rect x="650" y="150" width="100" height="120" fill="#c8b899" stroke="#352a22" stroke-width="8"/>
+<rect x="658" y="156" width="84" height="25" fill="#ede3cf"/>
+<g fill="#334d40"><rect x="670" y="608" width="140" height="32"/><rect x="818" y="460" width="30" height="105"/></g>
+<rect x="700" y="524" width="64" height="40" fill="#352a22"/>
+<rect x="126" y="482" width="100" height="24" fill="#302c22"/>
+<rect x="110" y="530" width="135" height="115" fill="#b99f71" stroke="#e5cf8f" stroke-dasharray="7 4"/>
+<path d="M65 400V490" stroke="#b1e3eb" stroke-width="10"/>
+<rect x="255" y="716" width="120" height="19" fill="#142632"/>
+<circle cx="420" cy="664" r="12" fill="#f3c06b"/><path d="M420 645V570 M420 570L410 587 M420 570L430 587" fill="none" stroke="#f3c06b" stroke-width="3"/>
+<g font-family="sans-serif" fill="#fff3df" text-anchor="middle" font-size="20">
+<text x="300" y="172">テレビ</text><text x="300" y="440">リビング / ソファ 約10人分</text>
+<text x="700" y="310">寝室・ベッド</text><text x="742" y="455">静かな個室</text><text x="742" y="483">4〜6人目安</text>
+<text x="580" y="390" font-size="15">廊下 2m</text><text x="178" y="573">QvPen</text><text x="178" y="600" font-size="16">描画スペース</text>
+<text x="105" y="518" font-size="16">ローカルミラー</text><text x="315" y="700" font-size="17">入退室ログ / JST</text>
+<text x="465" y="682" font-size="17">スポーン</text></g>
+<g font-family="sans-serif" fill="#dbd2c0" font-size="17"><text x="60" y="790">主な開口：寝室 1.4m、個室 1.6m、リビング⇔廊下 2m</text><text x="60" y="820">家具と色は仮案。個室の音声制御は完全な秘匿を保証しません。</text><text x="60" y="850">正確な形状・配置は NightHome_Blockout.unity を参照。</text></g></svg>
