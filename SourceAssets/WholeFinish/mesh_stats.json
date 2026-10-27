@@ -1,0 +1,200 @@
+{
+  "BedroomBed": {
+    "triangles": 5472,
+    "materials": 4,
+    "dimensions_blender_m": [
+      2.0399999618530273,
+      2.3299999237060547,
+      1.2599999904632568
+    ]
+  },
+  "BedsideTable": {
+    "triangles": 1616,
+    "materials": 2,
+    "dimensions_blender_m": [
+      0.6200000047683716,
+      0.5399999618530273,
+      0.6000000238418579
+    ]
+  },
+  "BedsideLamp": {
+    "triangles": 748,
+    "materials": 2,
+    "dimensions_blender_m": [
+      0.30000001192092896,
+      0.30000001192092896,
+      0.44999998807907104
+    ]
+  },
+  "BedroomCurtains": {
+    "triangles": 4604,
+    "materials": 2,
+    "dimensions_blender_m": [
+      5.300000190734863,
+      0.4399365484714508,
+      3.069999933242798
+    ]
+  },
+  "BedroomRug": {
+    "triangles": 732,
+    "materials": 2,
+    "dimensions_blender_m": [
+      4.800000190734863,
+      4.199999809265137,
+      0.027000000700354576
+    ]
+  },
+  "QuietSofa300": {
+    "triangles": 11396,
+    "materials": 4,
+    "dimensions_blender_m": [
+      3.0,
+      1.0399999618530273,
+      0.8829530477523804
+    ]
+  },
+  "QuietSofa240": {
+    "triangles": 8708,
+    "materials": 4,
+    "dimensions_blender_m": [
+      2.4000000953674316,
+      1.0399999618530273,
+      0.8829530477523804
+    ]
+  },
+  "QuietTable150": {
+    "triangles": 1180,
+    "materials": 1,
+    "dimensions_blender_m": [
+      1.5,
+      0.8999999761581421,
+      0.48000001907348633
+    ]
+  },
+  "QuietRug": {
+    "triangles": 732,
+    "materials": 2,
+    "dimensions_blender_m": [
+      4.599999904632568,
+      4.5,
+      0.027000000700354576
+    ]
+  },
+  "FloorCushion": {
+    "triangles": 768,
+    "materials": 1,
+    "dimensions_blender_m": [
+      0.6800000071525574,
+      0.6399999856948853,
+      0.17137613892555237
+    ]
+  },
+  "EntryStorage": {
+    "triangles": 2820,
+    "materials": 2,
+    "dimensions_blender_m": [
+      1.7300000190734863,
+      0.4660000205039978,
+      0.8774999976158142
+    ]
+  },
+  "EntryDoor": {
+    "triangles": 940,
+    "materials": 2,
+    "dimensions_blender_m": [
+      1.2999999523162842,
+      0.14300000667572021,
+      2.4000000953674316
+    ]
+  },
+  "EntryMat": {
+    "triangles": 732,
+    "materials": 2,
+    "dimensions_blender_m": [
+      1.899999976158142,
+      1.100000023841858,
+      0.027000000700354576
+    ]
+  },
+  "Bookcase": {
+    "triangles": 9544,
+    "materials": 5,
+    "dimensions_blender_m": [
+      1.7999999523162842,
+      0.3799999952316284,
+      1.875
+    ]
+  },
+  "Mug": {
+    "triangles": 956,
+    "materials": 2,
+    "dimensions_blender_m": [
+      0.1303539276123047,
+      0.09200000017881393,
+      0.10599999874830246
+    ]
+  },
+  "PenReturnDesk": {
+    "triangles": 1428,
+    "materials": 2,
+    "dimensions_blender_m": [
+      2.200000047683716,
+      0.6000000238418579,
+      0.8700000047683716
+    ]
+  },
+  "MirrorBezel": {
+    "triangles": 788,
+    "materials": 3,
+    "dimensions_blender_m": [
+      0.1469999998807907,
+      0.36000001430511475,
+      0.36000001430511475
+    ]
+  },
+  "CeilingDisc": {
+    "triangles": 400,
+    "materials": 2,
+    "dimensions_blender_m": [
+      0.4699999988079071,
+      0.4699999988079071,
+      0.07999999821186066
+    ]
+  },
+  "LogFrame": {
+    "triangles": 752,
+    "materials": 1,
+    "dimensions_blender_m": [
+      3.25,
+      0.06499999761581421,
+      2.5
+    ]
+  },
+  "DrawingFrame": {
+    "triangles": 752,
+    "materials": 1,
+    "dimensions_blender_m": [
+      3.1050000190734863,
+      0.07999999821186066,
+      1.9900000095367432
+    ]
+  },
+  "QuietOccupancyPanel": {
+    "triangles": 376,
+    "materials": 2,
+    "dimensions_blender_m": [
+      0.06800000369548798,
+      1.899999976158142,
+      0.8600000143051147
+    ]
+  },
+  "DrawingRug": {
+    "triangles": 732,
+    "materials": 2,
+    "dimensions_blender_m": [
+      3.4000000953674316,
+      3.0,
+      0.027000000700354576
+    ]
+  }
+}
