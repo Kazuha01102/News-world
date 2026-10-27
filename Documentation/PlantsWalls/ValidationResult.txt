@@ -1,0 +1,9 @@
+CSharpCompilationFailed=False
+OpaqueVertexSurfaceShaderErrors=0
+QuietNightSkyShaderErrors=0
+BuildTest=success
+SceneDirty=False
+UdonReferenceFingerprintIdentical=True
+PreservedColliderCount=189; addedExteriorInfillCollider=1
+LeafVertexInsideSolidCollider=0; leafVertexInControlFrontRegion=0
+MirrorInitiallyOff=True

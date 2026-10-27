@@ -32,4 +32,6 @@ Copyright 2022 The Zen Kaku Gothic Project Authors。
 
 ## 今回のリビング仕上げ素材
 
+観葉植物・壁・建具の追加分（`SourceAssets/PlantsWalls`、`Assets/NightHome/PlantsWalls`）も自作です。メッシュ、葉脈・土・壁紙の画像、頂点カラー対応の葉Shader、夜空Shader、小規模LightingTrialを含み、外部画像・モデルや有料生成サービスは使っていません。素材の出所と保存内容は `Documentation/PlantsWalls/README.md` に記録しています。
+
 `SourceAssets/LivingFurniture` のblend・Python、`Assets/NightHome/LivingFinish` のFBX・布/木目PNG・マテリアル・Prefabは本制作で自作しました。外部モデル・画像の購入やダウンロード、生成サービスの課金はありません。Blender/Unityの標準機能を使用。既存QvPenやSDKなど第三者パッケージの利用条件は上記から変更していません。

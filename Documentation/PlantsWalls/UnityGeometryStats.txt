@@ -1,0 +1,14 @@
+WallShell tri=290 slots=1 bounds=Center: (0.00, 1.70, 0.00), Extents: (10.10, 1.70, 8.10) UV0=457 UV2=457 colors=457
+ArchitecturalTrim tri=15336 slots=1 bounds=Center: (0.00, 1.45, 0.10), Extents: (9.90, 1.45, 8.00) UV0=32524 UV2=32524 colors=0
+BroadleafTall tri=5590 slots=4 bounds=Center: (-8.97, 0.84, 6.99), Extents: (0.43, 0.84, 0.45) UV0=5570 UV2=5570 colors=5570
+BroadleafCompact tri=4320 slots=4 bounds=Center: (0.91, 0.63, 6.96), Extents: (0.35, 0.63, 0.28) UV0=4302 UV2=4302 colors=4302
+BroadleafTall tri=5590 slots=4 bounds=Center: (8.97, 0.84, 7.01), Extents: (0.43, 0.84, 0.45) UV0=5570 UV2=5570 colors=5570
+Living contact shadow - one spot Spot Soft mask=1 intensity=0.75
+Warm light Point None mask=-1 intensity=1.5
+Warm light Point None mask=-1 intensity=1.5
+Warm light Point None mask=-1 intensity=1.25
+Warm light Point None mask=-1 intensity=1.5
+Warm light Point None mask=-1 intensity=1.5
+Warm light Point None mask=-1 intensity=1.6
+Directional Light Directional None mask=-1 intensity=0.14
+New geometry total tris=31126

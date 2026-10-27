@@ -1,0 +1,38 @@
+{
+  "BroadleafTall": {
+    "triangles": 5590,
+    "materials": 4,
+    "dimensions_blender_m": [
+      0.8625270128250122,
+      0.9072105884552002,
+      1.6843119859695435
+    ]
+  },
+  "BroadleafCompact": {
+    "triangles": 4320,
+    "materials": 4,
+    "dimensions_blender_m": [
+      0.6900651454925537,
+      0.5578864812850952,
+      1.2631938457489014
+    ]
+  },
+  "WallShell": {
+    "triangles": 290,
+    "materials": 1,
+    "dimensions_blender_m": [
+      20.200000762939453,
+      16.200000762939453,
+      3.4000000953674316
+    ]
+  },
+  "ArchitecturalTrim": {
+    "triangles": 15336,
+    "materials": 1,
+    "dimensions_blender_m": [
+      19.799999237060547,
+      15.989999771118164,
+      2.9049999713897705
+    ]
+  }
+}
